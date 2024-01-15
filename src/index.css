@@ -2,9 +2,12 @@
 *{
     margin:0;
     padding: 0;
+    border: 0;
 }
 body{
     font-family: 'Poppins', sans-serif;
+    height: 100%;
+    width: 100%;
 }
 /* nav{
     display: flex;
@@ -30,6 +33,7 @@ nav ul li:hover {
     border-bottom: 2px solid yellowgreen;
 }
 */
+/* Header CSS */
 .nav-it{
     display: flex;
     justify-content: space-between;
@@ -58,53 +62,37 @@ nav ul li:hover {
     border-bottom: 2px solid yellowgreen;
 }
 .logo img{
-    width: 75px;
-    height: 75px;
+    width: 150px;
+    height: 50px;
 }
-.card{
-    margin: 10px auto;
-    width: 300px;
-    border: 1px solid black;
-    padding: 10px;
-    /* margin: 10px; */
-    background-color: aliceblue;
-    border-radius: 10px;
-    overflow-wrap: break-word;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
+button{
+    width: 100px;
+    border: 0;
+    padding: 10px 0;
+    border-radius: 5px;
 }
-.card img{
-    width: 100%;
-    height: 200px;
+.login {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(104, 85, 224, 1);
+    cursor: pointer;
 }
-.restaurant-list{
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 1250px;
-    /* max-width: 100%; */
-    margin: 0 auto;
+.login:hover {
+    color: white;
+    box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
+    background-color: rgba(104, 85, 224, 1);
 }
-.shimmer-container{
-    /* margin: auto; */
-    width: 80vw;
-    height: 90vh;
-    display: flex;
-    flex-wrap: wrap;
-    /* justify-content: center; */
-    justify-content: space-around;
-    gap:10px;
-    margin: 10px auto;
-    /* padding: 10px; */
+.logout {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(85, 224, 217, 0.726);
+    cursor: pointer;
 }
-.shimmer-card{
-    width: 300px;
-    height: 300px;
-    background: lightgray;
-    border-radius: 10px;
-    /* padding: 10px; */
-    /* gap: 10px; */
+.logout:hover {
+    color: white;
+    box-shadow: 0 0 20px rgba(85, 224, 217, 0.726);
+    background-color: rgba(2, 128, 144, 1);
 }
+/* Header CSS */
+/* Body CSS */
 .search-wrap{
     margin:0 auto;
 }
@@ -123,6 +111,10 @@ nav ul li:hover {
     border-radius: 20px 0px 0px 20px;
     border: #CCC solid 1px;
 }
+.search ::placeholder{
+    color: #e5e5e5;
+    padding-left: 10px;
+}
 .search button{
     padding: 5px;
     width: 50px;
@@ -132,27 +124,288 @@ nav ul li:hover {
 .search img{
     width: 25px; height: 25px;
 }
+.restaurant-list{
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 1250px;
+    margin: 0 auto;
+    justify-content: space-around;
+}
+.restaurant-list a{
+    text-decoration: none;
+    color: black;
+}
+/* Body CSS */
+/* Restaurant Card */
+.card{
+    margin: 10px auto;
+    width: 300px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    overflow-wrap: break-word;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.card img{
+    width: 100%;
+    height: 200px;
+}
+/* Restaurant Card */
+/* .shimmer-container{
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px;
+    margin: 10px auto;
+} */
+/* .shimmer-card{
+    width: 300px;
+    height: 300px;
+    background: lightgray;
+    border-radius: 10px;
+} */
+
 
 /* Shimmer CSS */
-.card-title {
-    height: 20px;
-    margin: 0;
+.shimmer-container{
+    width: 80vw;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px;
+    margin: 10px auto;
 }
-.animated-bg {
-    background-image: linear-gradient(
-      to right,
-      #f6f7f8 0%,
-      #edeef1 10%,
-      #f6f7f8 20%,
-      #f6f7f8 100%
-    );
-    background-size: 200% 100%;
-    animation: bgPos 1s linear infinite;
+.shimmer-card{
+    width: 300px;
+    height: 300px;
+    background: lightgray;
+    border-radius: 10px;
 }
-.animated-bg-text {
-    border-radius: 50px;
-    display: inline-block;
-    margin: 0;
-    height: 10px;
+
+/* Shimmer CSS */
+
+/* login CSS */
+/* .ok{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logform{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: white;
+    padding: 40px 30px 30px 30px;
+    border-radius: 10px;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px; */
+/*} */
+.logform{
+    height: 400px;
+    width: 400px;
+    background-color: rgba(255,255,255,0.13);
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    /* backdrop-filter: blur(10px); */
+    border: 2px solid rgba(255,255,255,0.1);
+    box-shadow: 0 0 40px rgba(8,7,16,0.6);
+    padding: 50px 35px;
+    letter-spacing: 0.5px;
+}
+.logform h3{
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 42px;
+    text-align: center;
+}
+.logform label{
+    display: block;
+    margin-top: 30px;
+    /* font-size: 16px; */
+    font-weight: 500;
+}
+.logform input{
+    display: block;
+    height: 50px;
     width: 100%;
-}  
+    background-color: rgba(255,255,255,0.07);
+    border-radius: 3px;
+    padding: 0 10px;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 300;
+}
+.logform ::placeholder{
+    color: #e5e5e5;
+}
+.loginpage{
+    margin-top: 50px;
+    width: 100%;
+    /* background-color: #ffffff; */
+    /* color: #080710; */
+    padding: 15px 0;
+    font-size: 18px;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* login CSS */
+/* Rest Menu */
+/* 
+.menucard{
+    display: flex;
+    justify-content: space-between;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 10px;
+    margin: 0 auto;
+    width: 1000px;
+}
+.menurgtimg img{
+    width: 60px;
+    height: 60px;
+}
+*/
+/* NEW */
+.menu{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.menulist{
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 20px;
+    margin: 0 auto;
+    width: 1000px;
+    background-color: #F9FAFB;
+    /* height: 120px; */
+}
+.up{
+    display: flex;
+    justify-content: space-between;
+}
+.hide{
+    display: none;
+}
+.menubox{
+    width: 990px;
+    height: 100px;
+    border-radius: 2px;
+    border-bottom: 1px dashed  black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    gap: 10px;
+}
+.menuleft{
+    width: 800px;
+}
+.menuright{
+    position: relative;
+    width: 190px;
+    /* background-color: red; */
+    align-items: flex-end;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+.menurgtimg{
+    margin: 0 auto;
+}
+.menurgtimg img{
+    width: 90px;
+    height: 85px;
+    border-radius: 10px;
+    
+}
+.btnadd{
+    position: absolute;
+    bottom: 1px;
+    left: 75px;
+}
+.btnadd button{
+    width: 40px;
+    height: 15px;
+    font-size: 10px;
+}
+/* NEW */
+.menu-card{
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 1000px;
+    height: 600px;
+    background-color: aquamarine;
+    border-radius: 5px;
+}
+.menubtm{
+    margin: 0 auto;
+    width: 300px;
+    height: 260px;
+    text-align: center;
+    padding: 40px 0 0 0;
+}
+.menutp{
+    margin: 0 auto;
+    width: 1000px;
+    height: 300px;
+    text-align: center;
+    /* background-color: blue; */
+    text-align: center;
+}
+.menutp img{
+    width: 350px;
+    height: 300px;
+    border-radius: 3px;
+}
+.dashline{
+    margin: 10px auto;
+    width: 1000px;
+    border-top: 1px dashed  black;
+}
+.menutxt{
+    margin: 0 auto;
+    width: 1000px;
+}
+
+/* Rest Menu */
+
+/* Footer */
+footer{
+    /* position: fixed; */
+    /* bottom: 0; */
+    width: 100%;
+    /* background-color: red;
+    color: white; */
+    text-align: center;
+    background-color: rgb(250, 250, 250);
+    /* height: 35px; */
+    /* position: absolute; */
+    /* bottom: 0; */
+    /* height: 2.5rem; */
+    position: absolute;
+    bottom: 0;
+    position: fixed;
+}
+body > footer {
+    display: table-row;
+}
+/* Footer */
