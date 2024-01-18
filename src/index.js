@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
@@ -11,6 +11,9 @@ import Body from './components/Body';
 // import RestaurantMenu from './components/RestaurantMenu';
 import Login from './components/Login'
 import RestMenu from './components/RestMenu';
+import Profile  from './components/Profile';
+const Instamart = lazy(()=>import('./components/Instamart'))
+//import Instamart from './components/Instamart';
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -22,8 +25,12 @@ const appRouter = createBrowserRouter([
         element: <Body/>
       },
       {
-        path: "/about",
-        element: <About/>
+        path: "/about",// parentPath/{path} => localhost:1244/about
+        element: <About/>,
+        children:[{
+          path:"profile",// parentPath/{path} => localhost:1244/about/profile
+          element:<Profile/>
+        }]
       },
       {
         path: "/contact",
@@ -36,6 +43,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/restmenu/:id",
         element: <RestMenu/>
+      },
+      {
+        path: "/instamart",
+        element: 
+        <Suspense>
+          <Instamart/>
+        </Suspense>
       }
     ]
   }
@@ -43,7 +57,7 @@ const appRouter = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={appRouter} />
+      <RouterProvider router={appRouter} />
   </React.StrictMode>
 );
 

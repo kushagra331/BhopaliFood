@@ -1,40 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { imgurl } from './config';
 import { useParams } from 'react-router-dom';
-
+import useRestaurant from '../utils/useRestaurant';
 function hideshow(){
     return <></>
 }
-function RestMenu() {
-    const [restMenu,setRestMenu]=useState({});
-    const [restCard,setRestCard]=useState({});
-    const resId=useParams();//74644 || 5934
-    const {id}=resId
-    console.log("resId==",resId);
-    async function getrest(){debugger;
-        // const data= await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D28.5270362%26lng%3D77.13593279999999%26restaurantId=65270");
-        const data= await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId="+id);
-        const datajson= await data.json();
-        console.log(datajson);
-        setRestMenu(datajson?.data?.cards[0]?.card?.card?.info);
-        
-        const newdata=datajson?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
-            // (res)=>(res.card.card['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory")
-            // (res)=>(res?.card?.card['@type'] !== "type.googleapis.com/swiggy.presentation.food.v2.MenuVegFilterAndBadge")
-            (res)=>(res?.card?.card['@type'] !== "type.googleapis.com/swiggy.presentation.food.v2.MenuVegFilterAndBadge" && res?.card?.card['title']!==undefined)
-        )
-        //setRestCard(newdata[2]?.card?.card?.itemCards);
-        setRestCard(newdata);
-        //const value = newdata[2]?.card?.card?.itemCards;
-        //console.log("value=====",value);
-        console.log(restMenu);
-        console.log(restCard);
-    }
-    useEffect(()=>{
-        getrest();
-    },[]);
-    // datajson.data.cards[0].card.card.info
-    console.log(restCard);
+function RestMenu() {debugger;
+    const {id}=useParams();
+    const { restMenu, restCard } = useRestaurant(id);
   return (
     <div>
         <div className="menu-card">
@@ -67,7 +40,6 @@ function RestMenu() {
                 ))
             }
         </div>
-        
     </div>
     
   )

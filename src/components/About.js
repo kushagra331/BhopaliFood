@@ -1,14 +1,18 @@
-
-
+import { Outlet } from "react-router-dom";
+import { useParams } from "react-router-dom";
 const About = () =>{
+    const resId=useParams();
+    const {id}=resId;
+    console.log("ok",id);
     return (
         <>
+        <Outlet/>
         <section className="about">
             <h1>About Us</h1>
             <h3>Bhoapli Food</h3>
             <div className="about-info">
                 <div className="about-img">
-                    <img src="" alt="" srcset="" />
+                    <img src="" alt="" srcSet="" />
                 </div>
                 <div>
                     <p> 
