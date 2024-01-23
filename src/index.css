@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Outfit:wght@600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 *{
     margin:0;
@@ -34,18 +38,17 @@ nav ul li:hover {
 }
 */
 /* Header CSS */
+/*
 .nav-it{
     display: flex;
     justify-content: space-between;
     height: 72px;
     align-items: center;
     max-width: 1250px;
-    /* max-width: 100%; */
     margin: 0 auto;
     background-color: rgb(250, 250, 250);
     padding: 0px 40px;
-    /* padding: 0px 140px; */
-    /* border-bottom: 1px solid black; */
+    
     border-radius: 3px;
 }
 .nav-it ul{
@@ -64,7 +67,7 @@ nav ul li:hover {
 .logo img{
     width: 150px;
     height: 50px;
-}
+}*/
 button{
     width: 100px;
     border: 0;
@@ -93,6 +96,7 @@ button{
 }
 /* Header CSS */
 /* Body CSS */
+/*
 .search-wrap{
     margin:0 auto;
 }
@@ -124,7 +128,8 @@ button{
 .search img{
     width: 25px; height: 25px;
 }
-.restaurant-list{
+*/
+/* .restaurant-list{
     display: flex;
     flex-wrap: wrap;
     max-width: 1250px;
@@ -134,10 +139,11 @@ button{
 .restaurant-list a{
     text-decoration: none;
     color: black;
-}
+} */
+
 /* Body CSS */
 /* Restaurant Card */
-.card{
+/* .card{
     margin: 10px auto;
     width: 300px;
     border: 1px solid black;
@@ -152,7 +158,7 @@ button{
 .card img{
     width: 100%;
     height: 200px;
-}
+} */
 /* Restaurant Card */
 /* .shimmer-container{
     width: 80vw;
@@ -282,11 +288,11 @@ button{
 }
 */
 /* NEW */
-.menu{
+/* .menu{
     display: flex;
     flex-direction: column;
     gap: 30px;
-}
+} */
 .menulist{
     display: flex;
     flex-direction: column;
@@ -347,7 +353,7 @@ button{
     font-size: 10px;
 }
 /* NEW */
-.menu-card{
+/* .menu-card{
     display: flex;
     flex-direction: column;
     margin: 0 auto;
@@ -355,57 +361,45 @@ button{
     height: 600px;
     background-color: aquamarine;
     border-radius: 5px;
-}
-.menubtm{
+} */
+/* .menubtm{
     margin: 0 auto;
     width: 300px;
     height: 260px;
     text-align: center;
     padding: 40px 0 0 0;
-}
-.menutp{
+} */
+/* .menutp{
     margin: 0 auto;
     width: 1000px;
     height: 300px;
     text-align: center;
-    /* background-color: blue; */
-    text-align: center;
-}
-.menutp img{
+} */
+/* .menutp img{
     width: 350px;
     height: 300px;
     border-radius: 3px;
-}
-.dashline{
+} */
+/* .dashline{
     margin: 10px auto;
     width: 1000px;
     border-top: 1px dashed  black;
-}
-.menutxt{
+} */
+/* .menutxt{
     margin: 0 auto;
     width: 1000px;
-}
+} */
 
 /* Rest Menu */
 
 /* Footer */
-footer{
-    /* position: fixed; */
-    /* bottom: 0; */
+/* footer{
     width: 100%;
-    /* background-color: red;
-    color: white; */
     text-align: center;
     background-color: rgb(250, 250, 250);
-    /* height: 35px; */
-    /* position: absolute; */
-    /* bottom: 0; */
-    /* height: 2.5rem; */
-    position: absolute;
     bottom: 0;
-    position: fixed;
 }
 body > footer {
     display: table-row;
-}
+} */
 /* Footer */

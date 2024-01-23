@@ -12,8 +12,11 @@ import Body from './components/Body';
 import Login from './components/Login'
 import RestMenu from './components/RestMenu';
 import Profile  from './components/Profile';
+import Sub from './components/Sub';
 const Instamart = lazy(()=>import('./components/Instamart'))
 //import Instamart from './components/Instamart';
+// import  Submenu from './components/Submenu';
+
 const appRouter = createBrowserRouter([
   {
     path: "/",
@@ -47,9 +50,13 @@ const appRouter = createBrowserRouter([
       {
         path: "/instamart",
         element: 
-        <Suspense>
+        <Suspense fallback={<h1>Loading...</h1>}>
           <Instamart/>
         </Suspense>
+      },
+      {
+        path: "/sub",
+        element:<Sub/>
       }
     ]
   }

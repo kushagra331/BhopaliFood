@@ -5,6 +5,8 @@ import ShimmerUI from './ShimmerUI';
 import { Link } from 'react-router-dom';
 import { filterRestaurant } from '../utils/Helper';
 import useOnline from '../utils/useOnline'
+import Offer from './Offer';
+import Inputbox from './Inputbox';
 
 export default function Body() {
     const [allRestaurants,setaAllRestaurants]=useState([]);
@@ -36,33 +38,33 @@ export default function Body() {
     //Early Return : not rendering component [Avoid rendering] 
     if(!allRestaurants) return null; 
     //if(filteredRestaurant?.length==0) return <h1>No Restaurant Found</h1>
-    // console.log("filtered_len=",filteredRestaurant?.length);
-    // console.log("filtered=",filteredRestaurant);
-
+    
     if(!online){ 
         return <h1>Looks like you are offline</h1>;
     }
 
     return (
         <>	
-            <div className="search-bar" key="1">
-                <div className="search" >
+            <div className="p-5 my-5 w-full" key="1">
+                {/* <Offer/> */}
+                {/* <Inputbox/> */}
+                <div className="m-0 mx-auto w-80 p-3" >
                     <input type="text" placeholder="   Search..."
+                    className='h-10 rounded-md focus:bg-green-50'
                     value={searchTxt} 
                     onChange={(e)=>{ 
                         setSearchTxt(e.target.value);
                     }}/>
                     <button type="button" 
+                    className='bg-purple-800 hover:bg-purple-700 text-white rounded-md m-2 p-2 w-20 h-10'
                     onClick={()=>{
                         const data = filterRestaurant(allRestaurants,searchTxt);
                         setFilteredRestaurant(data);
-                    }}>
-                        <img src={require("../assets/img/search.png")} alt="" />
-                    </button>
+                    }}>Search</button>
                 </div>
             </div>
             
-            <div className='restaurant-list' key="2">
+            <div className='flex flex-wrap w-10/12 m-auto justify-between gap-1' key="2">
                 {/* Need to write : NO Restaurant found logic here */}
                 {
                     (allRestaurants?.length===0) ? 
