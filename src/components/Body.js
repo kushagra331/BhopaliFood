@@ -1,22 +1,25 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect, useContext} from 'react';
 import RestaurantCard from './RestaurantCard';
-// import {RestStatic} from './config';
 import ShimmerUI from './ShimmerUI';
 import { Link } from 'react-router-dom';
 import { filterRestaurant } from '../utils/Helper';
 import useOnline from '../utils/useOnline'
-import Offer from './Offer';
-import Inputbox from './Inputbox';
-
+// import Offer from './Offer';
+// import Login from '../utils/LoginContext';
+import UserContext from '../utils/UserContext';
 export default function Body() {
     const [allRestaurants,setaAllRestaurants]=useState([]);
     const [filteredRestaurant,setFilteredRestaurant]=useState([]);
 	const [searchTxt,setSearchTxt]=useState("");
     const online=useOnline();
+    const normal=useContext(UserContext);
+    // const {loguser}= useContext(Login);
+    // const [log,setLog]=useState(loguser)
+    // const {user}=useContext(UserContext)
     useEffect(()=>{
         getRestaurant();
     },[]);
-
+    
     async function getRestaurant(){
         try {
             // const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.2599333&lng=77.412615&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
@@ -44,13 +47,19 @@ export default function Body() {
     }
 
     return (
-        <>	
+        <>
+            <div>
+                {/* {normal.setDamm({...normal.damm,defimg:"kuchvalue - "})}
+                {normal.setDamm({...normal.damm,name:"new name - "})} */}
+                {/* {normal.setDamm((normal)=> ({...normal,name:"new name - "}))}
+                {normal.setDamm((normal)=> ({...normal,defimg:"kuchvalue -"}))}
+                {normal.damm.name}
+                {normal.damm.defimg} */}
+            </div>
             <div className="p-5 my-5 w-full" key="1">
-                {/* <Offer/> */}
-                {/* <Inputbox/> */}
                 <div className="m-0 mx-auto w-80 p-3" >
                     <input type="text" placeholder="   Search..."
-                    className='h-10 rounded-md focus:bg-green-50'
+                    className='h-10 rounded-md focus:bg-green-50 outline outline-1 '
                     value={searchTxt} 
                     onChange={(e)=>{ 
                         setSearchTxt(e.target.value);
@@ -61,9 +70,16 @@ export default function Body() {
                         const data = filterRestaurant(allRestaurants,searchTxt);
                         setFilteredRestaurant(data);
                     }}>Search</button>
+                    {/* <button>{log.id}</button>
+                    <input type="text" value={log.id} onChange={(e)=>{
+                        setLog({
+                            ...log,
+                            id:e.target.value
+                        })
+                    }} /> */}
                 </div>
             </div>
-            
+        
             <div className='flex flex-wrap w-10/12 m-auto justify-between gap-1' key="2">
                 {/* Need to write : NO Restaurant found logic here */}
                 {

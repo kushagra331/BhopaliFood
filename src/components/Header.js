@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 // import bhopalifood from './src/assets/img/bhoaplifood1.png'
 // import bhopalifood from '../assets/img/bhopalifood1.png';
 import bhopalifood1 from '../assets/img/bhopalifood1.png'
+import { useSelector } from 'react-redux';
 const loggedInUser= (val) => {
 	//Make an API call
 	return val;
@@ -21,16 +22,20 @@ const Title= () => {
 }
 export default function Header() {
 	const [logUser,setLogUser]=useState(false);
+  const cartItmes=useSelector((store)=>store.cart.items);
+  console.log("Hii",cartItmes);
+
 	return (
 		// fixed overflow-hidden top-0 left-0 right-0
 		//<div classB="relative">
 			<nav className='flex justify-around items-center bg-pink-50 shadow-lg fixed w-full top-0 left-0 right-0'>
 				<Title/>
 				<ul className='flex h-11 p-2'>
-					<li className='px-2'><Link to="/">Home</Link></li>
-					<li className='px-2'><Link to="/about">About</Link></li>
-					<li className='px-2'><Link to="/contact">Contact</Link></li>
-					<li className='px-2'><Link to="/instamart">Cart</Link></li>
+					<li key="1" className='px-2'><Link to="/">Home</Link></li>
+					<li key="2" className='px-2'><Link to="/about">About</Link></li>
+					<li key="3" className='px-2'><Link to="/contact">Contact</Link></li>
+					<li key="4" className='px-2'><Link to="/instamart">instamart</Link></li>
+          <li key="5" className='px-2'><Link to="/cart">Cart { cartItmes.length }</Link></li>
 				</ul>
 				{
 					logUser ? 
