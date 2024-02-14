@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // import bhopalifood from '../assets/img/bhopalifood1.png';
 import bhopalifood1 from '../assets/img/bhopalifood1.png'
 import { useSelector } from 'react-redux';
+import useOnlineStatus from '../utils/useOnlineStatus';
 const loggedInUser= (val) => {
 	//Make an API call
 	return val;
@@ -24,7 +25,7 @@ export default function Header() {
 	const [logUser,setLogUser]=useState(false);
   const cartItmes=useSelector((store)=>store.cart.items);
   console.log("Hii",cartItmes);
-
+  const isOnline=useOnlineStatus();
 	return (
 		// fixed overflow-hidden top-0 left-0 right-0
 		//<div classB="relative">
@@ -37,6 +38,13 @@ export default function Header() {
 					<li key="4" className='px-2'><Link to="/instamart">instamart</Link></li>
           <li key="5" className='px-2'><Link to="/cart">Cart { cartItmes.length }</Link></li>
 				</ul>
+        <div>
+        <span
+          className="whitespace-nowrap max-sm:mx-2 p-1 md:px-2.5 md:py-1.5 lg:px-5 lg:py-2.5 font-medium bg-white text-blue-500 rounded-lg text-sm cursor-default"
+        >
+          {isOnline ? "🟢 " + "Online" : "🔴 " + "Offline"}
+        </span>
+        </div>
 				{
 					logUser ? 
 					<button className="bg-purple-800 hover:bg-purple-700 text-white rounded-md m-2 p-2 w-20 h-10" onClick={

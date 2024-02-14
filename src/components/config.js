@@ -1,7 +1,7 @@
 
 export const imgurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/";
 //// const data= await fetch("https://corsproxy.org/?https%3A%2F%2Fwww.swiggy.com%2Fdapi%2Fmenu%2Fpl%3Fpage-type%3DREGULAR_MENU%26complete-menu%3Dtrue%26lat%3D28.5270362%26lng%3D77.13593279999999%26restaurantId=65270");
-export const CONFIG_MENU="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId=";
+// export const CONFIG_MENU="https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId=";
 
 export const RestaurantList=[
 	{
@@ -6982,3 +6982,16 @@ export const RestaurantList=[
 ];
 
 export const RestStatic=RestaurantList[4].card.card.gridElements.infoWithStyle.restaurants;
+
+export const swiggy_api_URL =
+  "https://corsproxy.org/?" +
+  encodeURIComponent(
+    "https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING"
+  );
+
+export const CONFIG_MENU =
+	"https://corsproxy.org/?" +
+	encodeURIComponent(
+	"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId="
+);
+// export const CONFIG_MENU ="https://corsproxy.org/?"+"https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&restaurantId=";
